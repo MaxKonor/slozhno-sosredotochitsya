@@ -1,5 +1,585 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+
+/* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: 0 auto;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+  min-inline-size: 360px;
+}
+
+.decorated-zone {
+  position: relative;
+  background-image: var(--bg-image);
+  background-position: bottom;
+  background-size: cover;
+  min-block-size: 768px;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  top: 722px;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-content: center;
+  padding-block-start: 20px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  color: var(--decor-color);
+  font-family: var(--main-font, serif);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 3px 13px;
+  text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  text-decoration: underline;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--decor-color);
+  outline-offset: 1px;
+}
+
+.header__theme-menu-pseudo::before {
+  content: "REC";
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  color: var(--pseudo-color);
+  font-family: var(--main-font, serif);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.header__theme-menu-pseudo::after {
+  content: var(--pseudo-content);
+  position: absolute;
+  top: 22px;
+  right: 24px;
+}
+
+.title {
+  margin-block-start: 276px;
+  color: var(--title-color);
+  font-family: var(--main-font, serif);
+  font-weight: 700;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-style: normal;
+  line-height: 0.8;
+  text-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+.title-text {
+  margin: 118px 22px 134px auto;
+  max-inline-size: 491px;
+}
+
+.title-decor {
+  font-family: var(--main-font, serif);
+  color: #000028;
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.3;
+}
+
+.concentration {
+  display: flex;
+  background-color: var(--bg-color);
+}
+
+.concentration-title {
+  margin-inline-start: 20px;
+  margin-block-start: 60px;
+  color: var(--section-headings-color);
+  font-family: var(--main-font, serif);
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.3;
+  max-inline-size: 314px;
+}
+
+.concentration-description {
+  margin-inline-start: auto;
+  margin-inline-end: 20px;
+  margin-block-start: 60px;
+  max-inline-size: 650px;
+}
+
+.research-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.research-link:hover {
+  text-decoration: underline;
+}
+
+.research-link:focus {
+  outline: 1px solid var(--text-color);
+  text-decoration: none;
+}
+
+.title-decor {
+  margin-block-end: 10px;
+  font-family: var(--main-font, serif);
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.3;
+  background-color: var(--accent-color);
+}
+
+.description-text {
+  margin-block-end: 20px;
+  color: var(--text-color);
+  font-family: var(--main-font, serif);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.3;
+}
+
+.description-text:last-child {
+  margin-block-end: 0;
+}
+
+.concentration-reduces {
+  margin-block-start: 80px;
+  background-color: var(--bg-color);
+}
+
+.container-concentration {
+  display: flex;
+  gap: 20px;
+  margin-block-start: 20px;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+}
+
+.container-concentration__column {
+  flex-direction: column;
+  gap: 10px;
+  inline-size: 100%;
+}
+
+.concentration-methods {
+  display: flex;
+  background-color: var(--bg-color);
+}
+
+.concentration-methods__title {
+  margin-block-start: 80px;
+}
+
+.container-methods {
+  margin-inline-start: auto;
+  margin-inline-end: 20px;
+  margin-block-start: 80px;
+  max-inline-size: 650px;
+}
+
+.description-methods-main__title {
+  margin-block-end: 20px;
+}
+
+.description-methods__title {
+  font-weight: 400;
+}
+
+.concentration-picture {
+  margin-block-start: 80px;
+  background-color: var(--bg-color);
+}
+
+.concentration-picture__title {
+  margin-inline-start: 20px;
+  margin-inline-end: 20px;
+  margin-block-start: 0px;
+  margin-block-end: 20px;
+}
+
+.container-picture {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street"
+    "tape street street";
+  margin-inline-start: 20px;
+  margin-inline-end: 20px;
+  grid-gap: 20px;
+}
+
+.sunset {
+  grid-area: sunset;
+  width: 100%;
+  object-fit: cover;
+}
+
+.ice-cream {
+  grid-area: ice-cream;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tape {
+  grid-area: tape;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.books {
+  grid-area: books;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.street {
+  grid-area: street;
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: var(--bg-color);
+}
+
+.footer-zone {
+  position: relative;
+}
+
+.footer-zone::before {
+  top: 782px;
+}
+
+.footer-zone::after {
+  top: 80px;
+}
+
+.footer-title {
+  margin-block-start: 0;
+  padding-inline-start: 274px;
+  padding-block-start: 380px;
+  padding-block-end: 322px;
+  text-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+@media (width <=768px) {
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-inline-start: 658px;
+    margin-block-start: 172px;
+  }
+
+  .header-title {
+    margin-block-start: 178px;
+    font-size: 120px;
+  }
+
+  .decorated-zone {
+    min-block-size: 1024px;
+  }
+
+  .decorated-zone::before {
+    top: 980px;
+  }
+
+  .title-text {
+    margin-block-start: 162px;
+    margin-block-end: 183px;
+    max-inline-size: 364px;
+  }
+
+  .concentration-title,
+  .concentration-methods__title {
+    max-inline-size: 236px;
+  }
+
+  .concentration-description,
+  .container-methods {
+    max-inline-size: 472px;
+  }
+
+  .container-concentration {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tape {
+    min-block-size: 50px;
+  }
+
+  .footer-title {
+    padding-inline-start: 204px;
+    padding-block-start: 526px;
+    padding-block-end: 462px;
+  }
+
+  .footer-zone::before {
+    top: 1040px;
+  }
+}
+
+@media (width <=740px) {
+
+  .header__theme-menu-list {
+    margin-inline-end: 8%;
+  }
+}
+
+@media (width <=700px) {
+
+  .header__theme-menu-list {
+    margin-inline-end: 12%;
+  }
+}
+
+@media (width <=670px) {
+
+  .header__theme-menu-list {
+    margin-inline-end: 16%;
+  }
+}
+
+@media (width <=640px) {
+
+  .header__theme-menu-list {
+    margin-inline-end: 24%;
+  }
+
+  .footer-title {
+    padding-inline-start: 130px;
+  }
+}
+
+@media (width <=600px) {
+  .header__theme-menu-list {
+    margin-inline-end: 35%;
+  }
+}
+
+@media (width <=550px) {
+  .header__theme-menu-list {
+    margin-inline-end: 45%;
+  }
+}
+
+@media (width <=510px) {
+  .header__theme-menu-list {
+    margin-inline-end: 65%;
+  }
+
+  .footer-title {
+    padding-inline-start: 70px;
+
+  }
+}
+
+@media (width <=460px) {
+
+  .header__theme-menu-list {
+    margin-inline-end: 85%;
+  }
+
+  .concentration {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-inline-start: 10px;
+  }
+
+  .concentration {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-inline-start: 15px;
+  }
+
+  .concentration-methods {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 10px;
+  }
+
+  .footer-title {
+    padding-inline-start: 30px;
+
+  }
+}
+
+
+@media (width <=375px) and (width <=425px) {
+
+  .decorated-zone {
+    min-block-size: 668px;
+  }
+
+  .header__theme-menu-list {
+    margin-inline-start: 380px;
+    margin-block-start: 55px;
+    margin-inline-end: 25%;
+  }
+
+  .title {
+    margin-inline-start: 10px;
+    margin-block-start: 72px;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .title-text {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    margin-block-start: 56px;
+    margin-block-end: 66px;
+  }
+
+  .decorated-zone::before {
+    top: 632px;
+    left: 10px;
+  }
+
+  .concentration {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-inline-start: 10px;
+  }
+
+  .concentration-title {
+    margin-inline-start: 0;
+    margin-block-start: 40px;
+    min-inline-size: 355px;
+  }
+
+  .concentration-description {
+    margin-inline-end: 10px;
+    margin-block-start: 0;
+  }
+
+  .concentration-reduces {
+    margin-top: 50px;
+  }
+
+  .concentration-reduces__title {
+    margin-left: 10px;
+  }
+
+  .container-concentration {
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+  }
+
+  .concentration-methods {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 10px;
+  }
+
+  .concentration-methods__title {
+    margin-inline-start: 10px;
+  }
+
+  .container-methods {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    margin-block-start: 20px;
+  }
+
+  .concentration-picture__title {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    margin-block-end: 10px;
+  }
+
+  .concentration-picture {
+    margin-block-start: 50px;
+  }
+
+  .container-picture {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "sunset"
+      "ice-cream"
+      "tape"
+      "books"
+      "street";
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    max-block-size: 1366px;
+    grid-gap: 10px;
+  }
+
+  .tape {
+    min-block-size: 237px;
+  }
+
+  .footer-title {
+    margin-inline-start: 0;
+    margin-block-start: 13px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    padding-block-start: 316px;
+    padding-block-end: 283px;
+  }
+
+  .footer-zone::after {
+    top: 38px;
+    right: 10px;
+  }
+
+  .footer-zone::before {
+    top: 658px;
+    left: 10px;
+  }
 }
