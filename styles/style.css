@@ -15,9 +15,6 @@
 
 .decorated-zone {
   position: relative;
-  background-image: var(--bg-image);
-  background-position: center;
-  background-size: cover;
   min-block-size: 100vh;
 }
 
@@ -287,7 +284,7 @@
 
 .footer-zone {
   position: relative;
-  background-image: var(--bg-color);
+  background-color: var(--bg-color);
 }
 
 .footer-zone::before {
