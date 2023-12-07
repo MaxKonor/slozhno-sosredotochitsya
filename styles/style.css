@@ -127,7 +127,6 @@
 .concentration {
   display: flex;
   padding-block-start: 60px;
-  background-color: var(--bg-color);
 }
 
 .concentration-title {
@@ -188,7 +187,6 @@
 .concentration-reduces {
   padding-block-start: 80px;
   padding-block-end: 80px;
-  background-color: var(--bg-color);
 }
 
 .container-concentration {
@@ -207,7 +205,6 @@
 
 .concentration-methods {
   display: flex;
-  background-color: var(--bg-color);
 }
 
 .container-methods {
@@ -226,7 +223,6 @@
 
 .concentration-picture {
   padding-block-start: 80px;
-  background-color: var(--bg-color);
 }
 
 .concentration-picture__title {
@@ -284,7 +280,6 @@
 
 .footer-zone {
   position: relative;
-  background-color: var(--bg-color);
 }
 
 .footer-zone::before {
